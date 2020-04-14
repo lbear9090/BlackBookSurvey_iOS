@@ -29,7 +29,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb572613976231923</string>
+				<string>fb225687495455053</string>
 			</array>
 		</dict>
 		<dict>
@@ -54,9 +54,9 @@
 	<key>CFBundleVersion</key>
 	<string>3</string>
 	<key>FacebookAppID</key>
-	<string>572613976231923</string>
+	<string>225687495455053</string>
 	<key>FacebookDisplayName</key>
-	<string>Black Book Survey App</string>
+	<string>Black Book Research</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSApplicationQueriesSchemes</key>
