@@ -214,7 +214,7 @@
     [Function setBooleanValueToUserDefaults:YES ForKey:kIsTwitterLogin];
     [Function setBooleanValueToUserDefaults:NO ForKey:kIsFacebookLogin];
     
-    [[FHSTwitterEngine sharedEngine]permanentlySetConsumerKey:@"1L2Wk2cZ16BVPBqozdSmVTqT3" andSecret:@"eI87eu5inH7cgUATdnVXMPiUSjw3PbCR0jsjBLb5TnZMIEGXR9"];
+    [[FHSTwitterEngine sharedEngine]permanentlySetConsumerKey:@"p3synMX4pCPc2Bp7eTqs5wuWG" andSecret:@"ifpaPJZFinCuxstx8GTsr43WH3kYkwxitz6VFbcKZg1NzOH6Qx"];
     [[FHSTwitterEngine sharedEngine]setDelegate:self];
     UIViewController *loginController = [[FHSTwitterEngine sharedEngine]loginControllerWithCompletionHandler:^(BOOL success) {
         NSLog(success?@"L0L success":@"O noes!!! Loggen faylur!!!");
