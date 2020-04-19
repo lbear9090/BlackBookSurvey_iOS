@@ -200,7 +200,7 @@
         }
         else if (![self isNameValid:txtName.text])
         {
-            [SVProgressHUD showErrorWithStatus:@"Name should contain only Aplphabets"];
+            [SVProgressHUD showErrorWithStatus:@"Name should contain only Alphabets"];
         }
         else if (txtEmail.text.length < 1)
         {
