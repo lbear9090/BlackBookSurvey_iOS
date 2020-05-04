@@ -19,7 +19,7 @@
 static NSString * const kClientId = @"30757229116-ftitsek7m3rgmepssus0u2okrg1i7mja.apps.googleusercontent.com";
 
 //@interface HomeVC : UIViewController<GPPSignInDelegate, FHSTwitterEngineAccessTokenDelegate>
-@interface HomeVC : UIViewController<FHSTwitterEngineAccessTokenDelegate, GIDSignInDelegate, GIDSignInUIDelegate>
+@interface HomeVC : UIViewController<FHSTwitterEngineAccessTokenDelegate, GIDSignInDelegate>
 
 @property BOOL isFb;
 

@@ -85,14 +85,28 @@
     [CoreDataHelper save];
 }
 
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+    BOOL handled = NO;
+    if ([[url scheme]hasPrefix:@"fb"]) {
+        handled = [[FBSDKApplicationDelegate sharedInstance] application:app
+        openURL:url
+        sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+        annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
+        ];
+    }else{
+        handled = [[GIDSignIn sharedInstance] handleURL:url];
+    }
+    // Add any custom logic here.
+    return handled;
+}
+
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
     BOOL wasHandle = NO;
     if ([[url scheme]hasPrefix:@"fb"]) {
         wasHandle = [[FBSDKApplicationDelegate sharedInstance] application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
     }else{
-        wasHandle = [[GIDSignIn sharedInstance] handleURL:url sourceApplication:sourceApplication
-                                               annotation:annotation];
+        wasHandle = [[GIDSignIn sharedInstance] handleURL:url];
 //        wasHandle = [GPPURLHandler handleURL:url sourceApplication:sourceApplication annotation:annotation];
     }
     return  wasHandle;

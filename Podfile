@@ -4,15 +4,15 @@ platform :ios, '8.0'
 # use_frameworks!
 
 target 'SurveyApp' do
-pod 'SVProgressHUD', '~> 2.2'
-pod 'TPKeyboardAvoiding', '~>1.2.11'
+pod 'SVProgressHUD'
+pod 'TPKeyboardAvoiding'
 #pod 'google-plus-ios-sdk', '~> 1.7.1'
-pod 'FHSTwitterEngine', '~> 2.0'
+pod 'FHSTwitterEngine'
 pod 'RGSColorSlider'
 pod 'ASValueTrackingSlider'
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
-pod 'GoogleSignIn', '~> 4.1.2'
+pod 'GoogleSignIn'
 
 end

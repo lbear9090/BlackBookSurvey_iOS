@@ -45,7 +45,7 @@
     tap.numberOfTapsRequired = 1;
     [btnFacebookLogin setUserInteractionEnabled:YES];
     [btnFacebookLogin addGestureRecognizer:tap];
-    
+
     //Google Button Gesture
     UITapGestureRecognizer *googleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(btnGoogleLogin:)];
     googleTap.numberOfTapsRequired = 1;
@@ -66,7 +66,7 @@
     signIn.clientID = kClientId;
     signIn.scopes = @[ @"profile", @"email" ];
     signIn.delegate = self;
-    signIn.uiDelegate = self;
+    signIn.presentingViewController = self;
 //    self.statusField.text = @"Initialized auth2...";
     
 }
@@ -131,9 +131,8 @@
 
     self.isFb = true;
     FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
-    
-    [loginManager logInWithReadPermissions: @[@"public_profile", @"email"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult *result, NSError *error)
-    {
+    [loginManager logInWithPermissions:@[@"public_profile", @"email"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult * _Nullable result, NSError * _Nullable error) {
+
         if (error)
         {
             NSLog(@"Facebook - Process error");
