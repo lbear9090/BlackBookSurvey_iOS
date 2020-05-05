@@ -87,7 +87,7 @@
 		<true/>
 	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Photo Library Access Warning</string>
+	<string>Photo Library Access For Profile</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SFUIText-Light.ttf</string>
