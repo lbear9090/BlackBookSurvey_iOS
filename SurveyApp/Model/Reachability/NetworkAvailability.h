@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Reachability.h"
 
 @interface NetworkAvailability : NSObject
 

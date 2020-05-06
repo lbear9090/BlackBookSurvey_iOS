@@ -14,4 +14,5 @@ target 'SurveyApp' do
   pod 'FBSDKLoginKit'
   pod 'FBSDKShareKit'
   pod 'GoogleSignIn'
+  pod 'Reachability'
 end

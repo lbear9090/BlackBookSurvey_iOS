@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -55,7 +55,6 @@
 		804091621C8EE1A4007357B7 /* Function.m in Sources */ = {isa = PBXBuildFile; fileRef = 8040914F1C8EE1A4007357B7 /* Function.m */; };
 		804091631C8EE1A4007357B7 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 804091521C8EE1A4007357B7 /* NSString+Extensions.m */; };
 		804091641C8EE1A4007357B7 /* NetworkAvailability.m in Sources */ = {isa = PBXBuildFile; fileRef = 804091551C8EE1A4007357B7 /* NetworkAvailability.m */; };
-		804091651C8EE1A4007357B7 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 804091571C8EE1A4007357B7 /* Reachability.m */; };
 		804091661C8EE1A4007357B7 /* UIView+RunTimeAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 8040915A1C8EE1A4007357B7 /* UIView+RunTimeAttributes.m */; };
 		8040916C1C8EE227007357B7 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8040916B1C8EE227007357B7 /* HomeVC.m */; };
 		8040919B1C8EF4DF007357B7 /* SFUIText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 804091951C8EF4DF007357B7 /* SFUIText-Bold.ttf */; };
@@ -193,8 +192,6 @@
 		804091521C8EE1A4007357B7 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
 		804091541C8EE1A4007357B7 /* NetworkAvailability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkAvailability.h; sourceTree = "<group>"; };
 		804091551C8EE1A4007357B7 /* NetworkAvailability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkAvailability.m; sourceTree = "<group>"; };
-		804091561C8EE1A4007357B7 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		804091571C8EE1A4007357B7 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		804091591C8EE1A4007357B7 /* UIView+RunTimeAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RunTimeAttributes.h"; sourceTree = "<group>"; };
 		8040915A1C8EE1A4007357B7 /* UIView+RunTimeAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RunTimeAttributes.m"; sourceTree = "<group>"; };
 		8040916A1C8EE227007357B7 /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
@@ -530,8 +527,6 @@
 			children = (
 				804091541C8EE1A4007357B7 /* NetworkAvailability.h */,
 				804091551C8EE1A4007357B7 /* NetworkAvailability.m */,
-				804091561C8EE1A4007357B7 /* Reachability.h */,
-				804091571C8EE1A4007357B7 /* Reachability.m */,
 			);
 			path = Reachability;
 			sourceTree = "<group>";
@@ -829,7 +824,6 @@
 				8046C09F1C9FCD050053ED83 /* OtherCell.m in Sources */,
 				80892B531C91A2FE00BC5CB2 /* WebServiceDataAdaptor.m in Sources */,
 				804F19EA1C99385C001837C9 /* Surveys.m in Sources */,
-				804091651C8EE1A4007357B7 /* Reachability.m in Sources */,
 				804091641C8EE1A4007357B7 /* NetworkAvailability.m in Sources */,
 				804091A61C8EFE6D007357B7 /* VendorVC.m in Sources */,
 				80086CBC1C9AB4990057AE05 /* CDSurveyResponse.m in Sources */,
@@ -1001,7 +995,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = FPSA3FLFU4;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1031,7 +1025,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = FPSA3FLFU4;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
