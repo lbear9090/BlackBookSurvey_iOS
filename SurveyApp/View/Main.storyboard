@@ -73,15 +73,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FacebookLogin" translatesAutoresizingMaskIntoConstraints="NO" id="W4K-lT-xSf">
-                                <rect key="frame" x="73" y="265" width="231" height="47"/>
+                                <rect key="frame" x="73" y="219" width="231" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="Ifx-7l-JXl">
-                                <rect key="frame" x="73" y="375" width="231" height="47"/>
+                                <rect key="frame" x="73" y="329" width="231" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="google" translatesAutoresizingMaskIntoConstraints="NO" id="RuY-jy-jHK">
-                                <rect key="frame" x="73" y="321" width="231" height="47"/>
+                                <rect key="frame" x="73" y="274" width="231" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIl-jn-7h2">
@@ -107,7 +107,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqA-eH-AMK">
-                                <rect key="frame" x="73" y="430" width="231" height="44"/>
+                                <rect key="frame" x="73" y="439" width="231" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99215686270000003" green="0.68235294120000001" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="14"/>
@@ -124,6 +124,10 @@
                                     <action selector="btnGuestLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jWP-bR-mJs"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="linkedin" translatesAutoresizingMaskIntoConstraints="NO" id="UEl-sy-Ckv">
+                                <rect key="frame" x="72" y="384" width="231" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -131,6 +135,7 @@
                     <connections>
                         <outlet property="btnFacebookLogin" destination="W4K-lT-xSf" id="ZEc-F8-3aw"/>
                         <outlet property="btnGoogleLogin" destination="RuY-jy-jHK" id="tTl-SO-8gp"/>
+                        <outlet property="btnLinkedinLogin" destination="UEl-sy-Ckv" id="U9V-iL-7au"/>
                         <outlet property="btnTwitterLogin" destination="Ifx-7l-JXl" id="zjD-on-jn0"/>
                         <outlet property="imgBlackBookResearch" destination="jjY-6a-4LK" id="ky3-qO-aRU"/>
                         <outlet property="lblWelcomeMessage" destination="Cnt-6K-RkA" id="6uS-Qb-Gff"/>
@@ -1911,6 +1916,7 @@ You hereby acknowledge that Black Book and its founders and staff are not respon
         <image name="UnselectedRadio" width="14" height="14"/>
         <image name="VerticalProgress" width="19.5" height="291"/>
         <image name="google" width="200.5" height="40"/>
+        <image name="linkedin" width="215" height="40"/>
         <image name="logo" width="285" height="66.666664123535156"/>
         <image name="twitter" width="200.5" height="40"/>
     </resources>

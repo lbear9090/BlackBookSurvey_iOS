@@ -141,7 +141,7 @@
     {
          if (!self.isGuest) {
         
-        if ([Function getBooleanValueFromUserDefaults_ForKey:kIsFacebookLogin] || [Function getBooleanValueFromUserDefaults_ForKey:kIsGoogleLogin] || [Function getBooleanValueFromUserDefaults_ForKey:kIsTwitterLogin])
+        if ([Function getBooleanValueFromUserDefaults_ForKey:kIsFacebookLogin] || [Function getBooleanValueFromUserDefaults_ForKey:kIsGoogleLogin] || [Function getBooleanValueFromUserDefaults_ForKey:kIsTwitterLogin]||[Function getBooleanValueFromUserDefaults_ForKey:kIsLinkedinLogin])
 
         txtName.text = [Function getStringValueFromUserDefaults_ForKey:@"facebookName"];
         txtEmail.text = [Function getStringValueFromUserDefaults_ForKey:@"facebookEmail"];
@@ -349,7 +349,7 @@
     
     if ([[NetworkAvailability instance] isReachable])
     {
-        if ([Function getBooleanValueFromUserDefaults_ForKey:kIsFacebookLogin] || [Function getBooleanValueFromUserDefaults_ForKey:kIsGoogleLogin] || [Function getBooleanValueFromUserDefaults_ForKey:kIsTwitterLogin])
+        if ([Function getBooleanValueFromUserDefaults_ForKey:kIsFacebookLogin] || [Function getBooleanValueFromUserDefaults_ForKey:kIsGoogleLogin] || [Function getBooleanValueFromUserDefaults_ForKey:kIsTwitterLogin]||[Function getBooleanValueFromUserDefaults_ForKey:kIsLinkedinLogin])
         {
             if ([Function getStringValueFromUserDefaults_ForKey:kUID].length > 0) {
                 [postDictionary setObject:[Function getStringValueFromUserDefaults_ForKey:kUID] forKey:@"userID"];
@@ -567,6 +567,8 @@
         
     }else if ([Function getBooleanValueFromUserDefaults_ForKey:kIsTwitterLogin]){
         [postDictionary setObject:[Function getStringValueFromUserDefaults_ForKey:kFacebookID] forKey:@"twitterID"];
+    }else if ([Function getBooleanValueFromUserDefaults_ForKey:kIsLinkedinLogin]){
+        [postDictionary setObject:[Function getStringValueFromUserDefaults_ForKey:kFacebookID] forKey:@"linkedinID"];
     }else{
         [postDictionary setObject:[Function getStringValueFromUserDefaults_ForKey:kFacebookID] forKey:@"facebookID"];
     }

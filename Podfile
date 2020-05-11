@@ -15,4 +15,6 @@ target 'SurveyApp' do
   pod 'FBSDKShareKit'
   pod 'GoogleSignIn'
   pod 'Reachability'
+  pod 'AFNetworking', '3.1.0'
+  pod 'LinkedinSwift'
 end

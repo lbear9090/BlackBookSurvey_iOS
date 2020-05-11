@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
   - AppAuth (1.3.0):
     - AppAuth/Core (= 1.3.0)
     - AppAuth/ExternalUserAgent (= 1.3.0)
@@ -32,18 +47,25 @@ PODS:
   - GTMSessionFetcher/Core (1.4.0)
   - GTMSessionFetcher/Full (1.4.0):
     - GTMSessionFetcher/Core (= 1.4.0)
+  - IOSLinkedInAPIFix (2.0.4):
+    - AFNetworking (>= 2.0.0)
+  - LinkedinSwift (1.7.9):
+    - AFNetworking (>= 3.1.0)
+    - IOSLinkedInAPIFix (>= 2.0.4)
   - Reachability (3.2)
   - RGSColorSlider (0.1.1)
   - SVProgressHUD (2.2.5)
   - TPKeyboardAvoiding (1.3.3)
 
 DEPENDENCIES:
+  - AFNetworking (= 3.1.0)
   - ASValueTrackingSlider
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
   - FHSTwitterEngine
   - GoogleSignIn
+  - LinkedinSwift
   - Reachability
   - RGSColorSlider
   - SVProgressHUD
@@ -51,6 +73,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AFNetworking
     - AppAuth
     - ASValueTrackingSlider
     - FBSDKCoreKit
@@ -60,12 +83,15 @@ SPEC REPOS:
     - GoogleSignIn
     - GTMAppAuth
     - GTMSessionFetcher
+    - IOSLinkedInAPIFix
+    - LinkedinSwift
     - Reachability
     - RGSColorSlider
     - SVProgressHUD
     - TPKeyboardAvoiding
 
 SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   AppAuth: 73574f3013a1e65b9601a3ddc8b3158cce68c09d
   ASValueTrackingSlider: 5261de3fcf00adb339efc93885e8f0bc99e703cd
   FBSDKCoreKit: ada5c8a05188daefc9addb985c52b8a1b26da519
@@ -75,11 +101,13 @@ SPEC CHECKSUMS:
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GTMAppAuth: 4deac854479704f348309e7b66189e604cf5e01e
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
+  IOSLinkedInAPIFix: a520fd805a03dade35f42904c7d89ded2a84c752
+  LinkedinSwift: f92083bf0404938768cc2cfd8c277205b566236f
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   RGSColorSlider: b045e5a4bd9f6fe568184e1ad35dee1f0cdf948f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TPKeyboardAvoiding: 6dd3fe3268b8f2627beb7ff3d82a3cacbdf66a36
 
-PODFILE CHECKSUM: 743e267e2de728e3a11887b116b0b0f3e39dcbfb
+PODFILE CHECKSUM: 75a12a2e77214e7796c54362066d9b790dfd799f
 
 COCOAPODS: 1.8.4

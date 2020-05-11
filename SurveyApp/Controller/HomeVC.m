@@ -16,6 +16,7 @@
 #import "StartSurveyVC.h"
 #import "RegistrationVC.h"
 #import "PrivacyPolicyVC.h"
+#import <LSHeader.h>
 
 @interface HomeVC ()
 {
@@ -25,13 +26,14 @@
 //    GPPSignIn * signIn;
 
     NSString *accessToken;
+    LinkedinSwiftHelper *linkedinHelper;
 }
 
 @end
 
 @implementation HomeVC
 
-@synthesize btnFacebookLogin, btnGoogleLogin, btnTwitterLogin;
+@synthesize btnFacebookLogin, btnGoogleLogin, btnTwitterLogin, btnLinkedinLogin;
 
 #pragma mark - View Life Cycle
 
@@ -40,7 +42,8 @@
     [super viewDidLoad];
     
     [self setupNavigation];
-    
+    linkedinHelper = [[LinkedinSwiftHelper alloc] initWithConfiguration: [[LinkedinSwiftConfiguration alloc] initWithClientId:@"78i3tvz9gostz5" clientSecret:@"1DI6u1EhB2jUq3HJ" state:@"20200511" permissions:@[@"r_liteprofile", @"r_emailaddress"] redirectUrl:@"http://localhost:3000/auth/linkedin/callback"] nativeAppChecker:[[WebLoginOnly alloc] init]];
+
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(btnFacebookLogin:)];
     tap.numberOfTapsRequired = 1;
     [btnFacebookLogin setUserInteractionEnabled:YES];
@@ -57,6 +60,12 @@
     twitterTap.numberOfTapsRequired = 1;
     [btnTwitterLogin setUserInteractionEnabled:YES];
     [btnTwitterLogin addGestureRecognizer:twitterTap];
+    
+    //Twitter Button Gesture
+    UITapGestureRecognizer *linkedinTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(btnLinkedinLogin:)];
+    linkedinTap.numberOfTapsRequired = 1;
+    [btnLinkedinLogin setUserInteractionEnabled:YES];
+    [btnLinkedinLogin addGestureRecognizer:linkedinTap];
     //  [self facebook];
     
     GIDSignIn* signIn = [GIDSignIn sharedInstance];
@@ -123,10 +132,60 @@
     [self.navigationController pushViewController:registrationVC animated:YES];
 }
 
+- (IBAction)btnLinkedinLogin:(id)sender
+{
+    self.isFb = false;
+    
+    [Function setBooleanValueToUserDefaults:NO ForKey:kIsGoogleLogin];
+    [Function setBooleanValueToUserDefaults:NO ForKey:kIsTwitterLogin];
+    [Function setBooleanValueToUserDefaults:YES ForKey:kIsLinkedinLogin];
+    [Function setBooleanValueToUserDefaults:NO ForKey:kIsFacebookLogin];
+    
+    [linkedinHelper authorizeSuccess:^(LSLinkedinToken * _Nonnull token) {
+        [SVProgressHUD showWithStatus:@"Fetching Data"];
+        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];
+        [self->linkedinHelper requestURL:@"https://api.linkedin.com/v2/me?projection=(id,localizedFirstName,localizedLastName)" requestType:LinkedinSwiftRequestGet success:^(LSResponse * _Nonnull response) {
+            NSString *firstName = response.jsonObject[@"localizedFirstName"];
+            NSString *lastName = response.jsonObject[@"localizedLastName"];
+            NSString *linkedinID = response.jsonObject[@"id"];
+            
+            [self->linkedinHelper requestURL:@"https://api.linkedin.com/v2/emailAddress?q=members&projection=(elements*(handle~))" requestType:LinkedinSwiftRequestGet success:^(LSResponse * _Nonnull response) {
+                [SVProgressHUD dismiss];
+                NSString *email = response.jsonObject[@"elements"][0][@"handle~"][@"emailAddress"];
+                
+                [Function setStringValueToUserDefaults:email ForKey:@"facebookEmail"];
+                [Function setStringValueToUserDefaults:[NSString stringWithFormat:@"%@ %@", firstName, lastName] ForKey:@"facebookName"];
+                [Function setStringValueToUserDefaults:linkedinID ForKey:kFacebookID];
+                
+                NSMutableDictionary *postDictionary = [NSMutableDictionary new];
+                
+                [postDictionary setObject:linkedinID forKey:@"facebookID"];
+                                
+                if ([[NetworkAvailability instance] isReachable])
+                {
+                    [[WebServiceConnector alloc] init:WSCheckExistingUser withParameters:postDictionary withObject:self withSelector:@selector(getCheckExistingUserResponse:) forServiceType:@"JSON" showDisplayMsg:nil];
+                }
+                
+            }error:^(NSError * _Nonnull error) {
+                NSLog(@"Error %@", error.debugDescription);
+                [SVProgressHUD dismiss];
+            }];
+        } error:^(NSError * _Nonnull error) {
+            NSLog(@"Error %@", error.debugDescription);
+            [SVProgressHUD dismiss];
+        }];
+    } error:^(NSError * _Nonnull error) {
+        NSLog(@"Error %@", error.debugDescription);
+    } cancel:^{
+        NSLog(@"Cancel");
+    }];
+}
+
 - (IBAction)btnFacebookLogin:(id)sender
 {
     [Function setBooleanValueToUserDefaults:NO ForKey:kIsGoogleLogin];
     [Function setBooleanValueToUserDefaults:NO ForKey:kIsTwitterLogin];
+    [Function setBooleanValueToUserDefaults:NO ForKey:kIsLinkedinLogin];
     [Function setBooleanValueToUserDefaults:YES ForKey:kIsFacebookLogin];
 
     self.isFb = true;
@@ -183,6 +242,7 @@
 {
     [Function setBooleanValueToUserDefaults:YES ForKey:kIsGoogleLogin];
     [Function setBooleanValueToUserDefaults:NO ForKey:kIsTwitterLogin];
+    [Function setBooleanValueToUserDefaults:NO ForKey:kIsLinkedinLogin];
     [Function setBooleanValueToUserDefaults:NO ForKey:kIsFacebookLogin];
 
     [[GIDSignIn sharedInstance] signIn];
@@ -211,6 +271,7 @@
     
     [Function setBooleanValueToUserDefaults:NO ForKey:kIsGoogleLogin];
     [Function setBooleanValueToUserDefaults:YES ForKey:kIsTwitterLogin];
+    [Function setBooleanValueToUserDefaults:NO ForKey:kIsLinkedinLogin];
     [Function setBooleanValueToUserDefaults:NO ForKey:kIsFacebookLogin];
     
     [[FHSTwitterEngine sharedEngine]permanentlySetConsumerKey:@"p3synMX4pCPc2Bp7eTqs5wuWG" andSecret:@"ifpaPJZFinCuxstx8GTsr43WH3kYkwxitz6VFbcKZg1NzOH6Qx"];

@@ -12,7 +12,8 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 //#import <GooglePlus/GooglePlus.h>
 #import <GoogleSignIn/GoogleSignIn.h>
-
+#import <linkedin-sdk/LISDK.h>
+#import <LSHeader.h>
 @interface AppDelegate ()
 
 @end
@@ -86,31 +87,35 @@
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
-    BOOL handled = NO;
     if ([[url scheme]hasPrefix:@"fb"]) {
-        handled = [[FBSDKApplicationDelegate sharedInstance] application:app
+        return [[FBSDKApplicationDelegate sharedInstance] application:app
         openURL:url
         sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
         annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
         ];
+    }else if([LISDKCallbackHandler shouldHandleUrl:url]){
+        return [LISDKCallbackHandler application:app openURL:url sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey] annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
+    }else if([LinkedinSwiftHelper shouldHandleUrl:url]){
+        return [LinkedinSwiftHelper application:app openURL:url sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey] annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
     }else{
-        handled = [[GIDSignIn sharedInstance] handleURL:url];
+        return [[GIDSignIn sharedInstance] handleURL:url];
     }
+    
     // Add any custom logic here.
-    return handled;
+    return YES;
 }
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    BOOL wasHandle = NO;
-    if ([[url scheme]hasPrefix:@"fb"]) {
-        wasHandle = [[FBSDKApplicationDelegate sharedInstance] application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
-    }else{
-        wasHandle = [[GIDSignIn sharedInstance] handleURL:url];
-//        wasHandle = [GPPURLHandler handleURL:url sourceApplication:sourceApplication annotation:annotation];
-    }
-    return  wasHandle;
-}
+//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+//{
+//    BOOL wasHandle = NO;
+//    if ([[url scheme]hasPrefix:@"fb"]) {
+//        wasHandle = [[FBSDKApplicationDelegate sharedInstance] application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+//    }else{
+//        wasHandle = [[GIDSignIn sharedInstance] handleURL:url];
+////        wasHandle = [GPPURLHandler handleURL:url sourceApplication:sourceApplication annotation:annotation];
+//    }
+//    return  wasHandle;
+//}
 
 #pragma mark - Remote Notification Methods
 

@@ -31,6 +31,7 @@
 #define kIsFacebookLogin @"isFacebookLogin"
 #define kIsGoogleLogin @"isGoogleLogin"
 #define kIsTwitterLogin @"isTwitterLogin"
+#define kIsLinkedinLogin @"isLinkedinLogin"
 
 #define kSurveyID @"surveyID"
 #define kSurveyName @"surveyName"

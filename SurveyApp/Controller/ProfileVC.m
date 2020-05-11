@@ -149,6 +149,8 @@
             
         }else if ([Function getBooleanValueFromUserDefaults_ForKey:kIsTwitterLogin]){
             [postDictionary setObject:[Function getStringValueFromUserDefaults_ForKey:kFacebookID] forKey:@"twitterID"];
+        }else if ([Function getBooleanValueFromUserDefaults_ForKey:kIsLinkedinLogin]){
+            [postDictionary setObject:[Function getStringValueFromUserDefaults_ForKey:kFacebookID] forKey:@"linkedinID"];
         }else{
             [postDictionary setObject:[Function getStringValueFromUserDefaults_ForKey:kFacebookID] forKey:@"facebookID"];
         }
