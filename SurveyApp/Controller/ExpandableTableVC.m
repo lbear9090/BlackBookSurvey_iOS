@@ -64,23 +64,23 @@
     else if (isRole)
     {
         arrCatrgories = [[[[CDRoles query] where:[NSString stringWithFormat:@"parentId = %@", [NSNumber numberWithInteger:0]]] all] mutableCopy];
-        [arrCatrgories sortUsingComparator:^NSComparisonResult(CDRoles * _Nonnull obj1, CDRoles * _Nonnull obj2) {
-            return [[obj1.roleName lowercaseString] compare:[obj2.roleName lowercaseString]] == NSOrderedDescending;
-        }];
+//        [arrCatrgories sortUsingComparator:^NSComparisonResult(CDRoles * _Nonnull obj1, CDRoles * _Nonnull obj2) {
+//            return [[obj1.roleName lowercaseString] compare:[obj2.roleName lowercaseString]] == NSOrderedDescending;
+//        }];
     }
     else if (isOrganization)
     {
         arrCatrgories = [[[[CDOrganizationType query] where:[NSString stringWithFormat:@"parentId = %@", [NSNumber numberWithInteger:0]]] all] mutableCopy];
-        [arrCatrgories sortUsingComparator:^NSComparisonResult(CDOrganizationType * _Nonnull obj1, CDOrganizationType * _Nonnull obj2) {
-            return [[obj1.organizationTypeName lowercaseString] compare:[obj2.organizationTypeName lowercaseString]] == NSOrderedDescending;
-        }];
+//        [arrCatrgories sortUsingComparator:^NSComparisonResult(CDOrganizationType * _Nonnull obj1, CDOrganizationType * _Nonnull obj2) {
+//            return [[obj1.organizationTypeName lowercaseString] compare:[obj2.organizationTypeName lowercaseString]] == NSOrderedDescending;
+//        }];
     }
     else if (isRating)
     {
         arrCatrgories = [[[CDRating query] all] mutableCopy];
-        [arrCatrgories sortUsingComparator:^NSComparisonResult(CDRating * _Nonnull obj1, CDRating * _Nonnull obj2) {
-            return [[obj1.ratingName lowercaseString] compare:[obj2.ratingName lowercaseString]] == NSOrderedDescending;
-        }];
+//        [arrCatrgories sortUsingComparator:^NSComparisonResult(CDRating * _Nonnull obj1, CDRating * _Nonnull obj2) {
+//            return [[obj1.ratingName lowercaseString] compare:[obj2.ratingName lowercaseString]] == NSOrderedDescending;
+//        }];
       //  arrCatrgories = [[[[CDRating query] where:[NSString stringWithFormat:@"ratingId = %@",[NSNumber numberWithInteger:0]]] all] mutableCopy];
         if (arrCatrgories.count == 0) {
 //            [arrCatrgories addObject:@"VENDOR OF TECHNOLOGY, PLATFORM OR SOFTWARE"];
