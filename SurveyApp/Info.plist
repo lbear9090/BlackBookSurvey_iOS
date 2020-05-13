@@ -18,16 +18,14 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
-	<key>LIAppId</key>
-	<string>53531554</string>
 	<key>CFBundleURLTypes</key>
 	<array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>li53531554</string>
-            </array>
-        </dict>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>li53531554</string>
+			</array>
+		</dict>
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
@@ -67,6 +65,8 @@
 	<string>Black Book Research</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>LIAppId</key>
+	<string>53531554</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
@@ -86,9 +86,9 @@
 		<string>fbshareextension</string>
 		<string>com.google.gppconsent.2.4.1</string>
 		<string>googlechrome</string>
-        <string>linkedin</string>
-        <string>linkedin-sdk2</string>
-        <string>linkedin-sdk</string>
+		<string>linkedin</string>
+		<string>linkedin-sdk2</string>
+		<string>linkedin-sdk</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -96,18 +96,18 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
-        <key>NSExceptionDomains</key>
-        <dict>
-            <key>linkedin.com</key>
-            <dict>
-                <key>NSExceptionAllowsInsecureHTTPLoads</key>
-                <true/>
-                <key>NSIncludesSubdomains</key>
-                <true/>
-                <key>NSExceptionRequiresForwardSecrecy</key>
-                <false/>
-            </dict>
-        </dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>linkedin.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
 	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Photo Library Access For Profile</string>
