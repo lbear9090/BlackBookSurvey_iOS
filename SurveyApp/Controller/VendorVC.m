@@ -61,7 +61,9 @@
     [self setupNavigation];
     
     arrCategories = [[[CDVendors query] all] mutableCopy];
-    
+    [arrCategories sortUsingComparator:^NSComparisonResult(CDVendors *obj1, CDVendors *obj2) {
+        return [obj1.vendorName compare:obj2.vendorName];
+    }];
     arrIndexTitles = [[self indexLettersForStrings:arrCategories] mutableCopy];
 }
 

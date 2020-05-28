@@ -198,7 +198,9 @@
         NSArray *array = [CoreDataAdaptor fetchSurveyTypeFromCoreData:[NSString stringWithFormat:@"parentId = '%@'", mSurveyType.surveyTypeId]];
         
         BOOL isAlreadyInserted = NO;
-        
+        [array sortedArrayUsingComparator:^NSComparisonResult(CDSurveyType *  _Nonnull obj1, CDSurveyType *  _Nonnull obj2) {
+            return [obj1.surveyTypeName compare:obj2.surveyTypeName];
+        }];
         for (CDSurveyType *surveyType in array)
         {
             NSInteger index = [arrCatrgories indexOfObjectIdenticalTo:surveyType];
