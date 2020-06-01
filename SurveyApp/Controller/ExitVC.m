@@ -60,8 +60,8 @@
     {
         MFMailComposeViewController *mail = [[MFMailComposeViewController alloc] init];
         mail.mailComposeDelegate = self;
-        [mail setSubject:@"2018 Black Book Survey"];
-        [mail setToRecipients:@[@"info@brown-wilson.com"]];
+        [mail setSubject:@"2020-2021 Black Book Survey"];
+        [mail setToRecipients:@[@"research@blackbookmarketresearch.com"]];
         
         [self presentViewController:mail animated:YES completion:NULL];
     }
