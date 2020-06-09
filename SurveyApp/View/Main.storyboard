@@ -161,7 +161,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Any use of this application, our website and/or other services that Black Book provides assumes that you agree to these Terms of Use. These terms also apply to all IOS and Android mobile applications that Black Book provides. If you do not accept these terms, you should cease all usage of our services. We reserve the right to change these Terms of Use in our sole direction at any time. You are advised to check back at this page for any updates.
+                                <mutableString key="text">Any use of this application, our website and/or other services that Black Book provides assumes that you agree to these Terms of Use. These terms also apply to all iOS and Android mobile applications that Black Book provides. If you do not accept these terms, you should cease all usage of our services. We reserve the right to change these Terms of Use in our sole direction at any time. You are advised to check back at this page for any updates.
 
 A user is allowed to have only one account. An email address may only be used by one user. You agree to provide accurate information including email address, phone number, employer or company/organization where the software or services are implemented, position title, and location. Failure to do so may result in the termination of your account.
 
@@ -169,7 +169,7 @@ You may not use Virtual Private Networks (VPNs), proxies or any other methods to
 
 Your account will be terminated at any time without notice if it is believed or has been determined that you have violated these Terms of Use or suspicious activity is detected. We also reserve the right to contact you via phone or email to confirm identities.
 
-You hereby acknowledge that Black Book and its founders and staff are not responsible or liable for any damages, losses or problems caused by or related to our website or mobile applications. </string>
+You hereby acknowledge that Black Book and its founders and staff are not responsible or liable for any damages, losses or problems caused by or related to our website or mobile applications. </mutableString>
                                 <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
