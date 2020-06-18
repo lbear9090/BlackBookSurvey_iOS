@@ -635,7 +635,7 @@
 
 - (void)changeCounter{
     
-        self.counterLabel.text = [NSString stringWithFormat:@"%@ of %@", [NSNumber numberWithUnsignedInteger:questionIndex++], [NSNumber numberWithUnsignedInteger:arrLoyaltyQuestions.count]];
+        self.counterLabel.text = [NSString stringWithFormat:@"%@ of %@", [NSNumber numberWithUnsignedInteger:questionIndex+1], [NSNumber numberWithUnsignedInteger:arrLoyaltyQuestions.count]];
     
 }
 
