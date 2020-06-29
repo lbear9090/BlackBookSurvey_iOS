@@ -1271,7 +1271,7 @@
                                         <rect key="frame" x="9" y="122" width="355" height="285"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fWg-aY-Dwb">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fWg-aY-Dwb">
                                                 <rect key="frame" x="2" y="0.0" width="351" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="15"/>
@@ -1892,11 +1892,11 @@
         <image name="Next" width="61" height="23"/>
         <image name="Previous" width="61" height="23"/>
         <image name="Right" width="20" height="20"/>
-        <image name="SelectedCheckbox" width="13" height="13"/>
+        <image name="SelectedCheckbox" width="13.333333015441895" height="13.666666984558105"/>
         <image name="SelectedRadio" width="14" height="14"/>
         <image name="TextfieldBackground" width="297" height="35.5"/>
         <image name="TrueSample.png" width="160" height="80"/>
-        <image name="UnselectedCheckbox" width="13" height="13"/>
+        <image name="UnselectedCheckbox" width="13.333333015441895" height="13.666666984558105"/>
         <image name="UnselectedRadio" width="14" height="14"/>
         <image name="VerticalProgress" width="19.5" height="291"/>
         <image name="google" width="200.5" height="40"/>
