@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>30757229116-ftitsek7m3rgmepssus0u2okrg1i7mja.apps.googleusercontent.com</string>
+	<string>30757229116-11ntjvppgi88o3ndt75t53gq1v8qlnt5.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.30757229116-ftitsek7m3rgmepssus0u2okrg1i7mja</string>
+	<string>com.googleusercontent.apps.30757229116-11ntjvppgi88o3ndt75t53gq1v8qlnt5</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>30757229116-otvdqvqhkn94san0ov8h9o9tvc1hk4n7.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.harbordev.surveyapp</string>
+	<string>com.blackbook.survey</string>
 	<key>PROJECT_ID</key>
 	<string>black-book-survey-app</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:30757229116:ios:16396a800c8cc25e7c6939</string>
+	<string>1:30757229116:ios:11341ce72729c4d77c6939</string>
 	<key>DATABASE_URL</key>
 	<string>https://black-book-survey-app.firebaseio.com</string>
 </dict>
